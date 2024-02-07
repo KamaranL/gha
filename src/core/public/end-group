@@ -1,0 +1,4 @@
+#!/bin/bash
+# @desc     close an already opened log group (see 'group')
+echo ::endgroup::
+exit 0

@@ -1,0 +1,5 @@
+#!/bin/bash
+# @desc     print a debug message to the log
+# @arg      <message>
+msg -s debug "$@"
+exit 0

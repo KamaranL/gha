@@ -1,0 +1,6 @@
+#!/bin/bash
+# @desc     add a mask to a string or variable to keep it from being printed in
+# @desc     the log
+# @arg      <string>
+echo "::add-mask::$@"
+exit 0

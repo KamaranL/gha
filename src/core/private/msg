@@ -1,0 +1,43 @@
+#!/bin/bash
+# @desc     print various message types to the log
+while (($# > 0)); do
+    case "$1" in
+    -c | --col)
+        [ -z "$2" ] && continue
+        [[ $2 =~ ^[1-9]?[0-9]+:[0-9]+$ ]] &&
+            params+="col=${2%%:*},endCol=${2#*:}," ||
+            params+="col=$2,"
+        shift
+        ;;
+    -f | --file)
+        [ -z "$2" ] && continue
+        params+="file=$2,"
+        shift
+        ;;
+    -l | --line)
+        [ -z "$2" ] && continue
+        [[ $2 =~ ^[1-9]?[0-9]+:[0-9]+$ ]] &&
+            params+="line=${2%%:*},endLine=${2#*:}," ||
+            params+="line=$2,"
+        shift
+        ;;
+    -s | --stream)
+        [ -z "$2" ] && continue
+        stream="$2"
+        shift
+        ;;
+    -t | --title)
+        [ -z "$2" ] && continue
+        params+="title=$2,"
+        shift
+        ;;
+    *)
+        message+="$1 "
+        ;;
+    esac
+    shift
+done
+
+[ $stream == debug ] &&
+    echo "::$stream::${message% *}" ||
+    echo "::$stream${params:+ ${params%,*}}::${message% *}"

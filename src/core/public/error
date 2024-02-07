@@ -1,0 +1,9 @@
+#!/bin/bash
+# @desc     create an error message and print the message to the log
+# @param    -f,--file=filename
+# @param    -c,--col=column (to specify a range, use ':' as a separator)
+# @param    -l,--line=line (to specify a range, use ':' as a separator)
+# @param    -t,--title=title
+# @arg      <message>
+msg -s error "$@"
+exit 0

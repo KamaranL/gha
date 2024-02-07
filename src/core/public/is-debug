@@ -1,0 +1,4 @@
+#!/bin/bash
+# @desc     check if debug is enabled on the runner
+[ "$RUNNER_DEBUG" == 1 ]
+exit $?

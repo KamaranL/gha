@@ -1,0 +1,18 @@
+name: 'gha-setup'
+description: 'installs the latest gha commands for use in the current workflow job'
+
+runs:
+  using: composite
+  steps:
+
+    - run: mkdir -p "$RUNNER_TEMP/_gha"
+      shell: bash
+
+    - run: |
+        VER="$(curl -sL 'https://raw.githubusercontent.com/KamaranL/gha/main/VERSION.txt')" && {
+            curl -sL "https://github.com/KamaranL/gha/releases/download/v$VER/gha-v$VER.tgz" | tar -xz -C .
+            chmod -R +x .
+            ./core add-path "$PWD"
+        }
+      shell: bash
+      working-directory: ${{ runner.temp }}/_gha

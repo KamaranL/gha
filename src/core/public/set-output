@@ -1,0 +1,8 @@
+#!/bin/bash
+# @desc     set an output variable that can be accessed from subsequent
+# @desc     workflow jobs
+# @arg      <name=value>
+is-local &&
+    echo "${1/=/: }" ||
+    echo "$1" >>"$GITHUB_OUTPUT"
+exit 0

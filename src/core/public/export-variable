@@ -1,0 +1,8 @@
+#!/bin/bash
+# @desc     set an environment variable that can be accessed from the current
+# @desc     workflow job
+# @arg      <name=value>
+is-local &&
+    echo "${1/=/: }" ||
+    echo "$1" >>"$GITHUB_ENV"
+exit 0

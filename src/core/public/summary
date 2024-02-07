@@ -1,0 +1,8 @@
+#!/bin/bash
+# @desc     print a  markdown-capable message to be displayed on the summary
+# @desc     page of a workflow run
+# @arg      <message>
+is-local &&
+    echo "$@" ||
+    echo "$@" >>"$GITHUB_STEP_SUMMARY"
+exit 0

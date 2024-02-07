@@ -1,0 +1,3 @@
+#!/bin/bash
+# @desc     check if function is being executed locally or in a workflow
+[ "$GITHUB_ACTIONS" != true ]

@@ -1,0 +1,5 @@
+#!/bin/bash
+# @desc     create an expandable group in the log
+# @arg      <group_title>
+echo ::group::"$1"
+exit 0
