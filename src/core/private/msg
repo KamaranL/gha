@@ -1,6 +1,6 @@
 #!/bin/bash
 # @desc     print various message types to the log
-while (($# > 0)); do
+while (($#)); do
     case "$1" in
     -c | --col)
         [ -z "$2" ] && continue

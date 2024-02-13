@@ -8,6 +8,7 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.stackdump
+*.tmp
 *~
 .AppleDB
 .AppleDesktop
@@ -37,6 +38,6 @@ Thumbs.db:encryptable
 [Dd]esktop.ini
 __test__/
 dist/
+distribute.sh
 ehthumbs.db
 ehthumbs_vista.db
-pack.sh
