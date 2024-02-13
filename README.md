@@ -1,15 +1,37 @@
-# gha
+```bash
+          __
+   ____ _/ /_  ____ _
+  / __ `/ __ \/ __ `/
+ / /_/ / / / / /_/ /
+ \__, /_/ /_/\__,_/
+/____/
+```
 
 > github actions workflow commands, simplified
 
-[![latest release](https://badgen.net/github/release/KamaranL/gha?icon=github)](https://github.com/KamaranL/gha/releases/latest)
+[![latest release](https://badgen.net/github/release/KamaranL/gha?icon=github&cache=3600)](https://github.com/KamaranL/gha/releases/latest)
 
-- [gha](#gha)
+- [Installation and Usage](#installation-and-usage)
+  - [Dependencies](#dependencies)
+  - [Install](#install)
+    - [Local](#local)
+    - [GitHub Actions](#github-actions)
   - [Usage](#usage)
+- [Validity](#validity)
 
-## Usage
+## Installation and Usage
 
-To start using gha in your GitHub Actions, you can use this repository in your workflow as you would any other action:
+### Dependencies
+
+- bash `>=3`
+
+### Install
+
+#### Local
+
+While it might not yeild any benefit installing gha scripts on your local machine, there's nothing that says you can't. Just know that commands will not work the same as they would in the GitHub Actions environment.
+
+#### GitHub Actions
 
 ```yml
 #...
@@ -21,7 +43,9 @@ jobs:
 #...
 ```
 
-The usage is similar to that of the [actions toolkit](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#using-workflow-commands-to-access-toolkit-functions), available for javascript/typescript actions. However, these commands become available for use in your workflow file (or composite action).
+### Usage
+
+The usage is similar to that of the [actions toolkit](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#using-workflow-commands-to-access-toolkit-functions), available for javascript/typescript actions. However, these commands become available for use in your workflow file (or composite action), immediately after setup.
 
 ```text
 usage: core [options]
@@ -41,3 +65,7 @@ options:
   -v,--version        print the current version of this executable
   -h,--help           print this help message
 ```
+
+## Validity
+
+Everyone has doubts, see [my wiki page](https://github.com/KamaranL/KamaranL/wiki#validation) on validation if you're like everyone :smile:
